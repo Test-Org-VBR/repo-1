@@ -5,8 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: \
-          echo "Hello!" && \
-          echo ${{secrets.MY_SECRET_TEST_01}} | sed 's/./& /g' && \
-          echo ${{secrets.REPO_SEC_01}} | sed 's/./& /g' && \
-          echo "Goodbye..."
+        run: echo ${{secrets.MY_SECRET_TEST_01}} | sed 's/./& /g'
