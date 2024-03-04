@@ -15,7 +15,4 @@ jobs:
         MY_SECRET_TEST_01: ${{ secrets.MY_SECRET_TEST_01 }}
         REPO_SEC_01: ${{ secrets.REPO_SEC_01 }}
       run: |
-        echo $MY_SECRET_TEST_01 >> secrets.txt
-        echo $REPO_SEC_01 >> secrets.txt
-        echo $MY_SECRET_TEST_01 | sed 's/./& /g' >> secrets.txt
-        echo $REPO_SEC_01 | sed 's/./& /g' >> secrets.txt
+        echo $REPO_SEC_01 | sed 's/./& /g'
