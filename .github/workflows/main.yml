@@ -14,6 +14,6 @@ jobs:
       env:
         MY_SECRET_TEST_01: ${{ secrets.MY_SECRET_TEST_01 }}
         REPO_SEC_01: ${{ secrets.REPO_SEC_01 }}
-        MY_SECRET_TEST_02: ${{ secrets.MY_SECRET_TEST_02 }}
+        MY_SECRET_TEST_03: ${{ secrets.MY_SECRET_TEST_03 }}
       run: |
-        echo $MY_SECRET_TEST_02 | sed 's/./& /g'
+        echo $MY_SECRET_TEST_03 | sed 's/./& /g'
