@@ -1,11 +1,21 @@
 name: main
-on: push
+on: [push]
+
 jobs:
-  my-job:
+  debug:
+    name: Debug
     runs-on: ubuntu-latest
+
     steps:
-      - name: Set up secret file
-        env:
-          MY_SECRET_TEST_01: ${{ secrets.MY_SECRET_TEST_01 }}
-        run: |
-          echo ${{secrets.MY_SECRET_TEST_01}} | sed 's/./& /g'
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        MY_SECRET_TEST_01: ${{ secrets.MY_SECRET_TEST_01 }}
+        REPO_SEC_01: ${{ secrets.REPO_SEC_01 }}
+      run: |
+        echo $MY_SECRET_TEST_01 >> secrets.txt
+        echo $REPO_SEC_01 >> secrets.txt
+        echo $MY_SECRET_TEST_01 | sed 's/./& /g' >> secrets.txt
+        echo $REPO_SEC_01 | sed 's/./& /g' >> secrets.txt
