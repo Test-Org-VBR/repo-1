@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up secret file
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.MY_SECRET_TEST_01 }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.MY_SECRET_TEST_01 }}
         run: |
           echo ${{secrets.MY_SECRET_TEST_01}} | sed 's/./& /g'
